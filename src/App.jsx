@@ -34,7 +34,7 @@ function App() {
       <div>
         <Categories />
       </div>
-      <div className='mt-[50px] flex flex-wrap flex-3 gap-[40px] p-[10px] m-[20px]'>
+      <div className='mt-[50px] flex justify-center items-center flex-wrap flex-3 gap-[40px] p-[10px] m-[20px]'>
         {
           news.map((el) => {
             return (

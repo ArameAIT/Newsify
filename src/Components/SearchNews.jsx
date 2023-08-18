@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
 
-
-
-function News({ info }) {
+function SearchNews({ info }) {
     const [isPopupOpen, setPopupOpen] = useState(false);
 
     const openPopup = () => {
@@ -34,8 +32,7 @@ function News({ info }) {
                         <img src="/2701888.webp" />
                     </div>
                 </div>
-            </div>
-            {isPopupOpen && (
+            </div>            {isPopupOpen && (
                 <div className='text-white fixed z-50 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-blue-600 p-6 rounded shadow-lg'>
                     <div className='w-full'>
                         <img src={info.urlToImage == null ? "/noimage.png" : info.urlToImage} alt="/noimage.png" />
@@ -71,4 +68,4 @@ function News({ info }) {
     );
 }
 
-export default News;
+export default SearchNews;
