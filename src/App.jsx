@@ -14,7 +14,6 @@ function App() {
 
   const cat = useSelector(selectCat)
   const country = useSelector(selectCountry)
-  console.log(country);
 
   useEffect(() => {
     fetch(NEWS_API + `country=${country}&category=${cat}&apiKey=${API_KEY}`).then((resp) => {
@@ -27,7 +26,6 @@ function App() {
   }, [cat, country])
 
   const news = useSelector(selectNews)
-  console.log(news);
 
   return (
     <div className='flex flex-col justify-center items-center'>

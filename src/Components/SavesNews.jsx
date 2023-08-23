@@ -4,12 +4,12 @@ import { handleSaves, selectSaves } from '../store/slices/Saves';
 
 
 
-function News({ info }) {
+function SavesNews({ info }) {
     const [isPopupOpen, setPopupOpen] = useState(false);
-    const [isSaved, setIsSaved] = useState(false);
+    const [isSaved, setIsSaved] = useState(true);
     const saves = useSelector(selectSaves)
-    
     const dispatch = useDispatch()
+    console.log(info);
 
     const openPopup = () => {
         setPopupOpen(true);
@@ -19,13 +19,12 @@ function News({ info }) {
         setPopupOpen(false);
     };
     function handleSave() {
-        
         setIsSaved(prev => !prev)
         const updatedSaves = isSaved
-        ? saves.filter(save => save.url !== info.url)
-        : [...saves, info];
-  
-      dispatch(handleSaves({ elem : updatedSaves}));
+            ? saves.filter(save => save.url !== info.url)
+            : "";
+
+        dispatch(handleSaves({ elem: updatedSaves }));
     }
 
     return (
@@ -75,7 +74,7 @@ function News({ info }) {
                             <div className='w-[40px]'>
                                 <img src="/share.png" />
                             </div>
-                            <div className={`w-[40px] ${isSaved == true ? "bg-white border rounded-2xl" : ""}`}>
+                            <div className={`w-[40px] ${isSaved == true ? "bg-white" : ""}`}>
                                 <img onClick={handleSave} src="/2701888.webp" />
                             </div>
                         </div>
@@ -92,4 +91,4 @@ function News({ info }) {
     );
 }
 
-export default News;
+export default SavesNews;

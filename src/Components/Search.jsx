@@ -9,7 +9,7 @@ function Search() {
   const NEWS_API = "https://newsapi.org/v2/everything?"
 
   const search = useSelector(selectSearch)
-
+  console.log(search);
   useEffect(() => {
     fetch(NEWS_API + `q=${search}&apiKey=${API_KEY}`).then((resp) => {
       return resp.json()
@@ -17,6 +17,7 @@ function Search() {
       setSearchRes(resp.articles)
     })
   }, [search])
+  
   return (
       <div className='mt-[50px] flex flex-wrap flex-3 gap-[40px] p-[10px] m-[20px]'>
         {
