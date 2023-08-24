@@ -9,22 +9,6 @@ const savesSlice = createSlice({
         handleSaves(state, {payload}){
             state.value = payload.elem
         }
-        // addingElem(state, { payload }) {
-        //     // const isSelected = state.value.find((el) => el.url == payload.el.url);
-        //     // console.log(isSelected);
-        //     // if (isSelected == undefined) {
-
-        //     //     state.value = [...state.value, payload.el];
-        //     // }
-
-        //     state.value = [...state.value, payload.el];
-
-        // },
-        // removeElem(state, { payload }) {
-        //     console.log(payload.el.author);
-        //     console.log(state.value)
-        //    state.value = state.value.filter((el) => el.author != payload.el.author)
-        // }
     }
 })
 

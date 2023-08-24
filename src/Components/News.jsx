@@ -11,13 +11,7 @@ function News({ info }) {
     
     const dispatch = useDispatch()
 
-    const openPopup = () => {
-        setPopupOpen(true);
-    };
-
-    const closePopup = () => {
-        setPopupOpen(false);
-    };
+   
     function handleSave() {
         
         setIsSaved(prev => !prev)
@@ -27,6 +21,13 @@ function News({ info }) {
   
       dispatch(handleSaves({ elem : updatedSaves}));
     }
+    const openPopup = () => {
+        setPopupOpen(true);
+    };
+
+    const closePopup = () => {
+        setPopupOpen(false);
+    };
 
     return (
         <div className='flex flex-col border p-[20px] w-[400px] bg-blue-600 rounded-xl text-white'>
