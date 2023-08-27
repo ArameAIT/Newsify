@@ -7,10 +7,11 @@ function Header() {
     const [inputValue, setInputValue] = useState("")
     const dispatch = useDispatch()
 
-    function handleClick(){
+    function handleClick(e) {
         dispatch(handleSearch({
-            search : inputValue
+            search: inputValue
         }))
+        setInputValue("")
     }
 
     return (
@@ -26,9 +27,9 @@ function Header() {
                 </Link>
             </div>
             <div className='flex justify-center items-center'>
-                <input type="text" name="for-search" id="for-search" value={inputValue} onChange={(e)=> setInputValue(e.target.value)} className='bg-gray-200 rounded-2xl' />
+                <input type="text" name="for-search" id="for-search" value={inputValue} onChange={(e) => setInputValue(e.target.value)} className='bg-gray-200 rounded-2xl' />
                 <Link to={"search"}>
-                    <button onClick={handleClick} className='ml-[10px] border p-[10px] rounded-2xl bg-blue-600 text-white' >Search</button>
+                    <button onClick={(e) => handleClick(e)} className='ml-[10px] border p-[10px] rounded-2xl bg-blue-600 text-white' >Search</button>
                 </Link>
             </div>
         </div>

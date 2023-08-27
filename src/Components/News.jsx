@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { handleSaves, selectSaves } from '../store/slices/Saves';
+import Share from './Share';
 
 
 
@@ -11,7 +12,6 @@ function News({ info }) {
     
     const dispatch = useDispatch()
 
-   
     function handleSave() {
         
         setIsSaved(prev => !prev)
@@ -30,7 +30,7 @@ function News({ info }) {
     };
 
     return (
-        <div className='flex flex-col border p-[20px] w-[400px] bg-blue-600 rounded-xl text-white'>
+        <div className='flex flex-col border p-[20px] w-[400px] bg-blue-600 rounded-xl text-white' onClick={isPopupOpen == true ? closePopup : ""}>
 
             <div onClick={isPopupOpen == true ? closePopup : openPopup} className='w-full'>
                 <img src={info.urlToImage == null ? "/noimage.png" : info.urlToImage} />
@@ -47,7 +47,7 @@ function News({ info }) {
                 <div className='flex gap-4'>
 
                     <div className='w-[40px]'>
-                        <img src="/share.png" />
+                       <Share info={info}/>
                     </div>
                     <div className={`w-[40px] ${isSaved == true ? "bg-white" : ""}`}>
                         <img onClick={handleSave} src="/2701888.webp" />
