@@ -28,9 +28,9 @@ function News({ info }) {
     const closePopup = () => {
         setPopupOpen(false);
     };
-
+    ///onClick={isPopupOpen == true ? closePopup : ""}
     return (
-        <div className='flex flex-col border p-[20px] w-[400px] bg-blue-600 rounded-xl text-white' onClick={isPopupOpen == true ? closePopup : ""}>
+        <div className='flex flex-col border p-[20px] w-[400px] bg-blue-600 rounded-xl text-white' > 
 
             <div onClick={isPopupOpen == true ? closePopup : openPopup} className='w-full'>
                 <img src={info.urlToImage == null ? "/noimage.png" : info.urlToImage} />
