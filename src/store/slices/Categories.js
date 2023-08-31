@@ -4,11 +4,12 @@ import { createSlice } from "@reduxjs/toolkit";
 const categoriesSlice = createSlice({
     name : "categorie",
     initialState : {
-        value : "general"
+        value : JSON.parse(localStorage.getItem("Category")) || "general",
     },
     reducers:{
         handleCat(state, {payload}){
              state.value = payload.categories
+             localStorage.setItem("Category", JSON.stringify(state.value))
         }
     }
 }) 

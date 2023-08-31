@@ -3,11 +3,12 @@ import { createSlice } from "@reduxjs/toolkit";
 const searchSlice = createSlice({
     name : "search",
     initialState : {
-        value : ""
+        value : JSON.parse(localStorage.getItem("Search")) || "",
     },
     reducers : {
         handleSearch(state, {payload}){
             state.value = payload.search
+            localStorage.setItem("Search", JSON.stringify(state.value))
         }
     }
 })

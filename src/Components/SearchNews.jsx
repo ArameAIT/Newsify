@@ -25,9 +25,9 @@ function SearchNews({ info }) {
 
         dispatch(handleSaves({ elem: updatedSaves }));
     }
-    //onClick={isPopupOpen == true ? closePopup : ""}
+    //
     return (
-        <div  className='flex flex-col border p-[20px] w-[400px] bg-blue-600 rounded-xl text-white'>
+        <div onClick={isPopupOpen == true ? closePopup : ""}  className='flex flex-col border p-[20px] w-[400px] bg-blue-600 rounded-xl text-white'>
 
             <div onClick={isPopupOpen == true ? closePopup : openPopup} className='w-full'>
                 <img src={info.urlToImage == null ? "/noimage.png" : info.urlToImage} />

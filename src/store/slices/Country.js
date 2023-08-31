@@ -4,11 +4,12 @@ import { createSlice } from "@reduxjs/toolkit";
 const countrySlice = createSlice({
     name : "country",
     initialState : {
-        value : "us"
+        value : JSON.parse(localStorage.getItem("Country")) || "us",
     },
     reducers:{
         handleCountry(state, {payload}){
              state.value = payload.country
+             localStorage.setItem("Country", JSON.stringify(state.value))
         }
     }
 }) 

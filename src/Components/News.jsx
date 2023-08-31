@@ -28,9 +28,9 @@ function News({ info }) {
     const closePopup = () => {
         setPopupOpen(false);
     };
-    ///onClick={isPopupOpen == true ? closePopup : ""}
+    ///
     return (
-        <div className='flex flex-col border p-[20px] w-[400px] bg-blue-600 rounded-xl text-white' > 
+        <div onClick={isPopupOpen == true ? closePopup : ""} className='flex flex-col border p-[20px] w-[400px] bg-blue-600 rounded-xl text-white' > 
 
             <div onClick={isPopupOpen == true ? closePopup : openPopup} className='w-full'>
                 <img src={info.urlToImage == null ? "/noimage.png" : info.urlToImage} />
@@ -49,8 +49,8 @@ function News({ info }) {
                     <div className='w-[40px]'>
                        <Share info={info}/>
                     </div>
-                    <div className={`w-[40px] ${isSaved == true ? "bg-white" : ""}`}>
-                        <img onClick={handleSave} src="/2701888.webp" />
+                    <div className={`w-[45px] border rounded-full cursor-pointer flex justify-center  ${isSaved == true ? "bg-white text-black" : " text-white"}`}>
+                        <div onClick={handleSave} className='p-[10px]' >Save</div>
                     </div>
                 </div>
             </div>

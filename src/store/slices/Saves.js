@@ -3,11 +3,12 @@ import { createSlice } from "@reduxjs/toolkit";
 const savesSlice = createSlice({
     name: "saves",
     initialState: {
-        value: []
+        value: JSON.parse(localStorage.getItem("Saves")) || [],
     },
     reducers: {
         handleSaves(state, {payload}){
             state.value = payload.elem
+            localStorage.setItem("Saves", JSON.stringify(state.value))
         }
     }
 })
