@@ -16,6 +16,9 @@ function SearchNews({ info }) {
     const closePopup = () => {
         setPopupOpen(false);
     };
+    const forExample = () => {
+        return 1;
+    };
     function handleSave() {
 
         setIsSaved(prev => !prev)
@@ -27,7 +30,7 @@ function SearchNews({ info }) {
     }
     //
     return (
-        <div onClick={isPopupOpen == true ? closePopup : ""}  className='flex flex-col border p-[20px] w-[400px] bg-blue-600 rounded-xl text-white'>
+        <div onClick={isPopupOpen == true ? closePopup : forExample} className='flex flex-col border p-[20px] w-[400px] bg-blue-600 rounded-xl text-white'>
 
             <div onClick={isPopupOpen == true ? closePopup : openPopup} className='w-full'>
                 <img src={info.urlToImage == null ? "/noimage.png" : info.urlToImage} />
@@ -46,8 +49,13 @@ function SearchNews({ info }) {
                     <div className='w-[40px]'>
                         <img src="/share.png" />
                     </div>
-                    <div className={`w-[40px] ${isSaved == true ? "bg-white" : ""}`}>
-                        <img onClick={handleSave} src="/2701888.webp" />
+                    <div className={`w-[45px] cursor-pointer flex justify-center  `}>
+                        {isSaved == true ? (
+
+                            <img onClick={handleSave} src="BlackImage.png" className='' />
+                        ) : (
+                            <img onClick={handleSave} src="/WhiteSave.png" className='p-[5px]' />
+                        )}
                     </div>
                 </div>
             </div>
@@ -73,8 +81,13 @@ function SearchNews({ info }) {
                             <div className='w-[40px]'>
                                 <img src="/share.png" />
                             </div>
-                            <div className={`w-[40px] ${isSaved == true ? "bg-white border rounded-2xl" : ""}`}>
-                                <img onClick={handleSave} src="/2701888.webp" />
+                            <div className={`w-[45px] cursor-pointer flex justify-center  `}>
+                                {isSaved == true ? (
+
+                                    <img onClick={handleSave} src="BlackImage.png" className='' />
+                                ) : (
+                                    <img onClick={handleSave} src="/WhiteSave.png" className='p-[5px]' />
+                                )}
                             </div>
                         </div>
                     </div>

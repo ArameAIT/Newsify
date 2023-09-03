@@ -13,7 +13,8 @@ function Categories() {
         { name: "health" },
         { name: "science" },
         { name: "sports" },
-        { name: "technology" }
+        { name: "technology" },
+        { name: "general" }
     ]
 
     function handleClick(name) {
