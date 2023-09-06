@@ -49,7 +49,7 @@ function News({ info }) {
                 </div>
                 <div className='flex gap-4'>
 
-                    <div className='w-[40px]'>
+                    <div className='w-[40px] cursor-pointer'>
                         <Share info={info} />
                     </div>
                     <div className={`w-[45px] cursor-pointer flex justify-center  `}>
@@ -81,8 +81,8 @@ function News({ info }) {
                         </div>
                         <div className='flex gap-4'>
 
-                            <div className='w-[40px]'>
-                                <img src="/share.png" />
+                            <div className='w-[40px] cursor-pointer'>
+                                <Share info={info} />
                             </div>
                             <div className={`w-[45px] cursor-pointer flex justify-center  `}>
                                 {isSaved == true ? (

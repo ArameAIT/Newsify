@@ -24,7 +24,7 @@ function Categories() {
     }
     return (
         <div className='flex gap-6 mt-[20px]'>
-            <select onClick={() => dispatch(handleCountry({ country }))} className='bg-blue-600 text-white rounded-2xl' value={country} onChange={(e) => setCoutry(e.target.value)} name="for-country" id="for-country">
+            <select onClick={() => dispatch(handleCountry({ country }))} className='bg-blue-600 text-white rounded-2xl cursor-pointer' value={country} onChange={(e) => setCoutry(e.target.value)} name="for-country" id="for-country">
                 <option value="ar">Argentina</option>
                 <option value="au">Australia</option>
                 <option value="at">Austria</option>
@@ -82,7 +82,7 @@ function Categories() {
             {
                 data.map((el) => {
                     return (
-                        <div key={Math.random()} className='border p-[10px] bg-blue-600 rounded-2xl text-white hover:opacity-50 transition'>
+                        <div key={Math.random()} className='border p-[10px] bg-blue-600 rounded-2xl text-white hover:opacity-80 transition'>
                             <button onClick={() => handleClick(el.name)}>{el.name}</button >
                         </div>
                     )

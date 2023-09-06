@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { handleSaves, selectSaves } from '../store/slices/Saves';
+import Share from './Share';
 
 function SearchNews({ info }) {
     const [isPopupOpen, setPopupOpen] = useState(false);
@@ -47,7 +48,7 @@ function SearchNews({ info }) {
                 <div className='flex gap-4'>
 
                     <div className='w-[40px]'>
-                        <img src="/share.png" />
+                        <Share info={info} />
                     </div>
                     <div className={`w-[45px] cursor-pointer flex justify-center  `}>
                         {isSaved == true ? (
@@ -79,7 +80,7 @@ function SearchNews({ info }) {
                         <div className='flex gap-4'>
 
                             <div className='w-[40px]'>
-                                <img src="/share.png" />
+                                <Share info={info} />
                             </div>
                             <div className={`w-[45px] cursor-pointer flex justify-center  `}>
                                 {isSaved == true ? (
